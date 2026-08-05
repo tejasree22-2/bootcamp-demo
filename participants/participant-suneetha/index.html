@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>suneetha — Bootcamp Project</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .page-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #90cdf4;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: #a78bfa; }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #90cdf4, #667eea, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #a0aec0;
+      border-bottom: 1px solid #2d3748;
+      padding-bottom: 0.4rem;
+      margin: 2rem 0 0.75rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 0.5rem;
+    }
+
+    p { margin-bottom: 0.6rem; color: #cbd5e0; }
+
+    strong { color: #e2e8f0; }
+
+    a { color: #90cdf4; text-decoration: none; }
+    a:hover { color: #a78bfa; text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(102, 126, 234, 0.18);
+      border: 1px solid rgba(102, 126, 234, 0.35);
+      color: #a78bfa;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      margin: 3px 3px 3px 0;
+    }
+
+    .project-box {
+      background: #1a1f2e;
+      border: 1px solid #2d3748;
+      border-left: 4px solid #667eea;
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 0.75rem 0;
+    }
+
+    ul {
+      padding-left: 1.4rem;
+      color: #cbd5e0;
+    }
+    ul li { margin-bottom: 0.3rem; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <a class="back-link" href="../../index.html">← Back to All Participants</a>
+
+  <h1>Your Name</h1>
+  <p><strong>Role / Track:</strong> Your role or bootcamp track (e.g. Frontend, Data Science)</p>
+  <p><strong>Location:</strong> Your city, Country</p>
+
+  <!-- ✏️ Replace the email and GitHub link below with your own -->
+  <p>
+    Contact me:
+    <a href="mailto:you@example.com">you@example.com</a> |
+    <a href="https://github.com/sree-suneetha02" target="_blank">GitHub</a>
+  </p>
+
+  <h2>About Me</h2>
+  <p>
+    Write a short introduction about yourself here. Who are you? What brought you
+    to this bootcamp? What are you hoping to learn or build?
+  </p>
+
+  <h2>My Project</h2>
+  <div class="project-box">
+    <h3>Your Project Title</h3>
+    <p>Your project description — explain what your project does, the problem it
+    solves, and what technologies or tools you used.</p>
+    <!-- ✏️ Replace # with your project repo or live demo URL -->
+    <p><a href="#">View Project / Demo</a></p>
+  </div>
+
+  <h2>Skills &amp; Technologies</h2>
+  <!-- ✏️ Replace these with your own skills -->
+  <span class="badge">HTML</span>
+  <span class="badge">CSS</span>
+  <span class="badge">JavaScript</span>
+  <span class="badge">Your Skill</span>
+
+  <h2>What I Built / Learned</h2>
+  <ul>
+    <li>First thing you built or learned during the bootcamp</li>
+    <li>Second thing you built or learned</li>
+    <li>Third thing you built or learned</li>
+  </ul>
+
+  <h2>Fun Fact</h2>
+  <p>Share something fun or interesting about yourself!</p>
+
+</div>
+</body>
+</html>
