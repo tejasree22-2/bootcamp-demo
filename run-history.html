@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run History — Bootcamp Participants</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #f4f6f9; color: #1a1a2e; padding: 2rem; }
+    h1 { font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .subtitle { color: #555; margin-bottom: 2rem; font-size: 0.95rem; }
+    .run-block {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .run-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1.2rem;
+      background: #1a1a2e;
+      color: #fff;
+    }
+    .run-title { font-weight: 700; font-size: 1rem; }
+    .run-meta { font-size: 0.82rem; opacity: 0.75; }
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: #f0f2f5; }
+    th, td { padding: 0.65rem 1.2rem; text-align: left; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+    td a { color: #4f46e5; text-decoration: none; font-weight: 600; }
+    td a:hover { text-decoration: underline; }
+    .no-new { padding: 0.8rem 1.2rem; color: #888; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Run History</h1>
+  <p class="subtitle">Each section shows students whose pull requests were merged since the previous run.</p>
+
+<!-- RUNS_START -->
+    <div class="run-block">
+      <div class="run-header">
+        <span class="run-title">Run #1</span>
+        <span class="run-meta">2026-08-06 05:10 AM &mdash; 0 new students</span>
+      </div>
+      <p class="no-new">No new participants this run.</p>
+    </div>
+    <div class="run-block">
+      <div class="run-header">
+        <span class="run-title">Run #2</span>
+        <span class="run-meta">2026-08-06 05:10 AM &mdash; 0 new students</span>
+      </div>
+      <p class="no-new">No new participants this run.</p>
+    </div>
+<!-- RUNS_END -->
+
+</body>
+</html>
