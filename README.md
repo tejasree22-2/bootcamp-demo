@@ -6,7 +6,7 @@ Welcome! This repository is the hands-on exercise for the **Git & GitHub Bootcam
 
 ## What Is This Exercise About?
 
-Each team will build a small **participant showcase** — a collection of profile pages, one per team member, all living in the same repository. By the end of the session you will have practised the core Git & GitHub workflow that real software teams use every day:
+Each participant adds their own **profile page** to a shared showcase — all living in the same repository. By the end of the session you will have practised the core Git & GitHub workflow that real software teams use every day:
 
 ```
 Fork → Clone → Edit → Commit → Push → Pull Request
@@ -14,29 +14,28 @@ Fork → Clone → Edit → Commit → Push → Pull Request
 
 ---
 
-## Team Structure
+## How It Works
 
-Teams are made up of **5 members**:
-
-| Role | Responsibility |
-|---|---|
-| **Team Lead (1 person)** | Creates the repository, sets up the base project, reviews Pull Requests, and runs `update.py` to refresh the main page |
-| **Contributors (4 people)** | Fork the repo, add their own profile folder, and open a Pull Request |
+1. Each **participant** forks this repository to their own GitHub account.
+2. They clone their fork, create their folder inside `participants/`, fill in `info.json`, and write their own `index.html`.
+3. They push their changes and open a **Pull Request** back to this repository.
+4. A bot **automatically validates** the `info.json` — if it has any errors, the PR is blocked and the bot comments with the exact error message.
+5. If the JSON is valid, the PR is **automatically merged** — no manual review needed.
+6. When ready, the instructor runs the **Update Participants Page** workflow from GitHub Actions to refresh the live showcase with all merged profiles.
 
 ---
 
-## Demo Flow
+## Automation
 
-Here is the sequence of events during the bootcamp session:
+This repository uses GitHub Actions to handle everything automatically:
 
-1. **Team Lead** creates a new GitHub repository and pushes the starter code.
-2. **Team Lead** shares the repository link with the rest of the team.
-3. Each **Contributor** forks the repository to their own GitHub account.
-4. Each **Contributor** clones their fork, creates their folder (`rollno-name/`), fills in `info.json` and writes their own `index.html`, then commits their changes.
-5. Each **Contributor** pushes their changes and opens a **Pull Request** back to the Team Lead's repository.
-6. **Team Lead** reviews and merges each Pull Request.
-7. The main `index.html` is updated automatically (GitHub Actions runs `update.py` on every merge).
-8. The finished showcase — with everyone's profile card — is visible on the live site!
+| What | How |
+|---|---|
+| **JSON validation** | Every PR is checked — invalid `info.json` is blocked with an error comment |
+| **Auto-merge** | Valid PRs are merged automatically without any manual approval |
+| **Showcase update** | Instructor manually triggers the workflow to update `index.html` and deploy the live site |
+
+> PRs that touch files outside the `participants/` folder are blocked automatically.
 
 ---
 
@@ -68,6 +67,9 @@ bootcamp-demo/
 │   └── rollno-name/        # Your folder, named as your roll number + your name
 │       ├── index.html      # Your profile page (you write this)
 │       └── info.json       # Your roll number, name, and photo URL
+├── .github/workflows/
+│   ├── auto-merge.yml      # Validates info.json and auto-merges valid PRs
+│   └── update-and-deploy.yml  # Manually triggered — updates index.html and deploys
 ├── CONTRIBUTING.md         # Step-by-step guide for contributors
 └── README.md               # You are here!
 ```
@@ -78,7 +80,7 @@ bootcamp-demo/
 
 - Read through [CONTRIBUTING.md](CONTRIBUTING.md) carefully — it covers the most common questions.
 - If you are still stuck, open an **Issue** on this repository and describe what went wrong. No question is too basic!
-- Ask your Team Lead or the bootcamp instructor.
+- Ask your bootcamp instructor.
 
 ---
 
