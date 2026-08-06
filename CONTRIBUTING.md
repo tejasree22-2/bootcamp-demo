@@ -166,7 +166,52 @@ A **pull request** (PR) asks the maintainers to add your changes to the main pro
 4. Give your PR a short title, e.g. `Add 21BCE001-yourname`.
 5. Click **Create pull request**.
 
-That's it! Once your PR is merged, `update.py` runs automatically and your profile card — with your photo, name, and roll number — will appear on the main showcase page.
+That's it! Once your PR is merged, your profile card — with your photo, name, and roll number — will appear on the main showcase page.
+
+---
+
+## Important Rules to Avoid Errors
+
+### Your info.json must be valid JSON
+
+Before submitting your PR, double-check your `info.json`. A single missing quote, comma, or bracket will cause the merge to fail automatically.
+
+Valid example:
+```json
+{
+  "roll_no": "21BCE001",
+  "name": "Your Full Name",
+  "photo": "https://github.com/your-github-username.png"
+}
+```
+
+Common mistakes:
+- Missing `"` around a value
+- Missing `,` between fields
+- Extra `,` after the last field
+- Using `'` single quotes instead of `"` double quotes
+
+If your `info.json` has an error, the bot will automatically comment on your PR with the exact error. Fix the file and push again to the **same branch** — the PR will re-check and merge automatically.
+
+### Do NOT open a second PR to fix a mistake
+
+If your PR has an error, **do not close it and open a new one**. Instead:
+
+1. Fix the mistake in your local file
+2. Save it
+3. Run:
+
+```bash
+git add participants/your-folder/info.json
+git commit -m "fix info.json"
+git push origin main
+```
+
+Your existing PR will update automatically and the merge will retry.
+
+### Only add files inside your own folder
+
+Your PR should only contain files inside `participants/your-folder/`. Touching any other file will cause the auto-merge to be blocked.
 
 ---
 
