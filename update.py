@@ -12,7 +12,7 @@ import os
 import json
 import re
 from html import escape
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 PARTICIPANTS_DIR = os.path.join(os.path.dirname(__file__), "participants")
 MAIN_HTML = os.path.join(os.path.dirname(__file__), "index.html")
@@ -165,7 +165,8 @@ def append_run(new_entries):
         history = f.read()
 
     run_number = get_run_count(history) + 1
-    timestamp = datetime.now().strftime("%Y-%m-%d %I:%M %p")
+    IST = timezone(timedelta(hours=5, minutes=30))
+    timestamp = datetime.now(IST).strftime("%Y-%m-%d %I:%M %p IST")
     block = make_run_block(run_number, timestamp, new_entries)
 
     updated = history.replace(
