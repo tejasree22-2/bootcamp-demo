@@ -49,18 +49,3 @@ jobs:
             });
             console.log('PR merged successfully.');
 
-      - name: Checkout main after merge
-        uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Run update.py
-        run: python3 update.py
-
-      - name: Commit and push updated index.html
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git diff --staged --quiet || git commit -m "chore: auto-update participants page"
-          git push
